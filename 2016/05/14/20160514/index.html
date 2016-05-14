@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Maxinechyi</title>
+  <title>Node.js安装填坑 | Maxinechyi</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -72,7 +72,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -204,17 +204,12 @@
         <!-- // End height spacing helper -->
 
         <!-- ============================ END Hero Image =========================== -->
-      <!-- ============================ Content =========================== -->
-
+      
 <section id="intro">
     <div class="container">
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2016/05/14/20160514/">Node.js安装填坑</a></h3>
-                    <span>
-                        <span class="post-meta">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
       <time datetime="2016-05-14T15:01:12.000Z" itemprop="datePublished">
           2016-05-14
       </time>
@@ -225,41 +220,50 @@
     
     
 </span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        “我最近打算建个博客。”“最近是多远？”“明天！”
-论拖延症，我绝对能排个世界前几。有建博客这个想法绝对不止一两天了，域名早就想好了（我只要拉风的.com），相关的文章也看了不少，就是迟迟没有take action。电商系统建设、项目管理、金融、Matlab四门考试连环冲击波，手头的项目又提新需求了，刺猬书才看了一半，貌似什么都能成为理由。若没有上面的对话，又不知要拖到猴年…好吧，百度了一下发现猴年马月就是6月5号，已然接近了。
-进入主
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2016/05/14/20160514/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
+                <h1>Node.js安装填坑</h1>
             </div>
         </div>
-        
-        <nav class="pagination" role="pagination">
-          
-          
-        </nav>
-    </div>
-</section>
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p></p>
+        <div class="col-md-8 col-md-offset-2">
+      		<p>“我最近打算建个博客。”<br>“最近是多远？”<br>“明天！”</p>
+<p>论拖延症，我绝对能排个世界前几。<br>有建博客这个想法绝对不止一两天了，域名早就想好了（我只要拉风的.com），相关的文章也看了不少，就是迟迟没有take action。<br>电商系统建设、项目管理、金融、Matlab四门考试连环冲击波，手头的项目又提新需求了，刺猬书才看了一半，貌似什么都能成为理由。若没有上面的对话，又不知要拖到猴年…好吧，百度了一下发现猴年马月就是6月5号，已然接近了。</p>
+<p>进入主题，此blog使用githubPages+Hexo，教程已很完备，随手google、百度即可，总的来说方便快捷，坑不算多。但为了体现此blog的技术性质，</p>
+<h2 id="node-js-msi文件安装失败（windows）"><a href="#node-js-msi文件安装失败（windows）" class="headerlink" title="node.js msi文件安装失败（windows）"></a>node.js msi文件安装失败（windows）</h2><p>node.js官网首页上的msi安装包绝对是不爱折腾星人的福音，傻瓜式的点next就能搞定。可是！！轮到我就报错，试了好几次都roll back。网上一搜确实还是有跟我遇到一样问题的。解决方式基本都是手动配置环境变量，但不巧碰到一篇没写详细的文，就卡在这里好一会儿。</p>
+<h3 id="下载nodejs-exe"><a href="#下载nodejs-exe" class="headerlink" title="下载nodejs.exe"></a>下载nodejs.exe</h3><p>到node.js最新版本的<a href="https://nodejs.org/en/download/current/" target="_blank" rel="external">下载页</a>，下载适合你系统的Windows Binary (.exe)</p>
+<h3 id="下载npm压缩包"><a href="#下载npm压缩包" class="headerlink" title="下载npm压缩包"></a>下载npm压缩包</h3><p>msi是已经集成了npm的，但exe文件需要另外下载<br><a href="http://nodejs.org/dist/npm/" target="_blank" rel="external">下载地址</a>请选择最新版本以避免出现版本问题</p>
+<h3 id="设置node-js的目录"><a href="#设置node-js的目录" class="headerlink" title="设置node.js的目录"></a>设置node.js的目录</h3><p>在你喜欢的任意位置建一个名为nodejs的文件夹（我是直接在D盘根目录下建的）。将刚刚下载好的exe和nfpm解压后生成的一共三个文件直接放在这个目录下。<br><img src="mulu.png" alt="mulu"></p>
+<h2 id="配置系统变量"><a href="#配置系统变量" class="headerlink" title="配置系统变量"></a>配置系统变量</h2><p>win7下，开始&gt;计算机&gt;系统属性&gt;高级系统设置&gt;环境变量<br>在系统变量下点新建NODE_PATH变量,值为D:/nodejs（你的目录路径）/node_modelus<br><img src="bianliang1.png" alt="mulu"></p>
+<p>编辑原有的Path变量，在值的最后加上D:/nodejs（你的目录路径）<br><img src="bianliang2.png" alt="mulu"></p>
+<h3 id="安装express"><a href="#安装express" class="headerlink" title="安装express"></a>安装express</h3><p>打开cmd命令行，使用命令行定位到D:/nodejs（你的目录路径）下，键入以下命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">d:</span><br><span class="line"><span class="built_in">cd</span> nodejs</span><br><span class="line">npm install express</span><br></pre></td></tr></table></figure>
+<h3 id="查看node-js安装情况"><a href="#查看node-js安装情况" class="headerlink" title="查看node.js安装情况"></a>查看node.js安装情况</h3><p>在命令行里面输入node -v<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure></p>
+<p>若返回版本号则安装成功。</p>
+<h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>至此，the very first post就这样结束了，拖延的毛病也在这里结束掉吧。<br>关于hexo，关于githubPages还有很多有意思的问题,如首页加载速度优化(字库和图片云储存)，百度爬虫无法抓取等等。<br>Flag先立在这里。</p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
+        <nav class="pagination" role="pagination">
+    
+    
+</nav>
+
+        <div class="duoshuo">
+<div class="ds-thread" data-thread-key="2016/05/14/20160514/" data-title="Node.js安装填坑" data-url="http://maxinechyi.com/2016/05/14/20160514/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"duoshuo_name"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+	 || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+</div>
     </div>
 </section>
-<!-- ============================ END Content =========================== -->
+
 
       
 <!-- ============================ Footer =========================== -->
